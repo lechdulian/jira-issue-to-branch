@@ -5,8 +5,7 @@ function task2branch() {
   const titleContainer = document.querySelector('[data-testid="issue-field-summary.ui.issue-field-summary-inline-edit--container"]')
 
   if ( ! issueEl || ! issueTitleEl || ! titleContainer ) {
-    console.log("This page doesn't seem to be a Jira issue page")
-    return
+    return ''
   }
 
   const issueTitle     = issueTitleEl.innerText
@@ -45,12 +44,24 @@ chrome.tabs.query({
       func : task2branch,
     }).then(( response ) => {
       if ( response[0] ) {
-        let nameField = document.getElementById('task2branch__name')
-        nameField.innerText = response[0].result
+
+        const nameField = document.getElementById('task2branch__name')
+        const labelField = document.getElementById('task2branch__label')
+
+        if ( ! response[0].result ) {
+          labelField.innerText = "This page doesn't seem to be a Jira issue page";
+        } else {
+          labelField.innerText = "Feature branch name:";
+          nameField.innerText = response[0].result;
+        }
+
         nameField.addEventListener('click', function(event) {
           navigator.clipboard.writeText(nameField.innerText)
         })
       }
     })
+  } else {
+    const labelField = document.getElementById('task2branch__label')
+    labelField.innerText = "This page doesn't seem to be a Jira issue page";
   }
 });

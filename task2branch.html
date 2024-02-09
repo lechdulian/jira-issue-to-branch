@@ -1,7 +1,20 @@
 <html>
   <body>
     <script src="popup.js"></script>
-    <p style="min-width:300px;"><strong>Your feature branch name:</strong></p>
+    <style>
+        #task2branch__label {
+            min-width:300px;
+        }
+        #task2branch__name {
+            background: #eee;
+            padding: 5px 6px;
+            color: #666;
+            font-family: monospace;
+            font-size: 11px;
+            cursor: pointer;
+        }
+    </style>
+    <p id="task2branch__label"><strong>Your feature branch name:</strong></p>
     <p id="task2branch__name"></p>
   </body>
 </html>
