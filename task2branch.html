@@ -4,6 +4,7 @@
     <style>
         #task2branch__label {
             min-width:300px;
+            font-weight:bold;
         }
         #task2branch__name {
             background: #eee;
@@ -12,9 +13,22 @@
             font-family: monospace;
             font-size: 11px;
             cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        #task2branch__name:hover {
+            background: #e2e2e2;
+            color:#4caf50;
+        }
+
+        #task2branch__info {
+            display:none;
+            color: #666;
+            font-size:10px;
         }
     </style>
-    <p id="task2branch__label"><strong>Your feature branch name:</strong></p>
+    <p id="task2branch__label">Getting branch name from JIRA issue...</p>
     <p id="task2branch__name"></p>
+    <p id="task2branch__info"">Copied!</p>
   </body>
 </html>
