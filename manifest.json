@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "JIRA Task to Branch",
+    "description": "Copies a JIRA task as git feature branch name",
+    "version": "1.0",
+    "action": {
+      "default_popup": "task2branch.html",
+      "default_icon": "task2branch.png"
+    },
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ]
+}
