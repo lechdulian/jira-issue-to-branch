@@ -17,18 +17,6 @@ function task2branch() {
   branchName = branchName.replace(/[^A-Z0-9\-]+/gi, '') // delete any other special char
   branchName = 'feature/' + branchName
 
-  // append the feature name to UI
-  if ( ! document.getElementById('task-branch-name') ) {
-      const branchEl   = document.createElement('div');
-      branchEl.innerText = branchName
-      branchEl.setAttribute('id','task-branch-name')
-      branchEl.style.paddingLeft  = '10px'
-      branchEl.style.marginBottom = '10px'
-      branchEl.style.color        = '#6B778C'
-      titleContainer.appendChild(branchEl);
-  }
-  issueEl.focus() // we have to focus on document to allow clipboard API in bookmarklet context
-
   return branchName
 }
 
